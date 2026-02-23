@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#E6DBAE">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,6 +19,9 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="40dp"
         android:paddingBottom="20dp"
+        android:textColor="#590606"
+        android:layout_gravity="center"
+
         />
 
     <LinearLayout
@@ -25,44 +29,52 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#590606"
             android:text="Add a product:"/>
 
         <EditText
             android:id="@+id/product_name"
+            android:textColor="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"/>
 
         <EditText
             android:id="@+id/product_quantity"
+            android:textColor="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quantity"/>
 
         <EditText
             android:id="@+id/product_category"
+            android:textColor="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Category"/>
 
         <EditText
             android:id="@+id/product_imageref"
+            android:textColor="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ImageRef"/>
 
         <Button
             android:id="@+id/product_addBtn"
+            android:backgroundTint="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"/>
 
         <Button
             android:id="@+id/product_saveBtn"
+            android:backgroundTint="#590606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"/>
@@ -72,6 +84,7 @@
     <ListView
         android:id="@+id/product_list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:foreground="00"/>
 
 </LinearLayout>
