@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="40dp"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         android:textColor="#590606"
         android:layout_gravity="center"
 
@@ -81,10 +81,24 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/product_list"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="00"/>
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for item"
+            android:textColor="#590606"
+            android:layout_gravity="center"/>
+        <ListView
+            android:id="@+id/product_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="00"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>
