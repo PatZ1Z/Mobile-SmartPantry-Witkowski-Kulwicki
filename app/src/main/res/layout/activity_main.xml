@@ -81,6 +81,38 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/product_increaseQuantity"
+            android:backgroundTint="#590606"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1 Quantity"
+            />
+
+        <EditText
+            android:id="@+id/product_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for item"
+            android:textColor="#590606"
+            android:layout_marginHorizontal="15dp"
+            />
+
+        <Button
+            android:id="@+id/product_decreaseQuantity"
+            android:backgroundTint="#590606"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-1 Quantity"/>
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/ListOfProducts"
         android:layout_width="match_parent"
