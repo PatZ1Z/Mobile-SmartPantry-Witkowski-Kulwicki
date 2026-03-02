@@ -97,11 +97,12 @@
 
         <EditText
             android:id="@+id/product_search"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Search for item"
+            android:hint="Wyszukaj"
             android:textColor="#590606"
             android:layout_marginHorizontal="15dp"
+            android:textAlignment="center"
             />
 
         <Button

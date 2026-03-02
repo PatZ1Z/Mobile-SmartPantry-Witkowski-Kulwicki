@@ -6,7 +6,11 @@ import kotlinx.serialization.Serializable
 data class Product(
     val UUID: String,
     val Name: String,
-    val Quantity: Int,
+    var Quantity: Int,
     val Category: String,
     val ImageRef: String
-)
+) {
+    override fun toString(): String {
+        return Name
+    }
+}
