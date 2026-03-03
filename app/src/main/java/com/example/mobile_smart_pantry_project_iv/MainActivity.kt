@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -122,6 +125,8 @@ class MainActivity : AppCompatActivity() {
             adapter.addAll(loadedList)  // lista w adapterze teraz od razu pełna
             adapter.notifyDataSetChanged()
 
+            setupCategorySpinner()
+
             Toast.makeText(this, "Działa", Toast.LENGTH_SHORT).show()
 
         } catch (e: Exception) {
@@ -167,5 +172,48 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+    }
+
+    private fun setupCategorySpinner() {
+        val spinner = findViewById<Spinner>(R.id.category_spinner)
+
+        // Pobieramy unikalne kategorie z produktów
+        val categories = productArray
+            .map { it.Category }
+            .distinct()
+            .sorted()
+            .toMutableList()
+
+        categories.add(0, "All") // opcja pokazująca wszystko
+
+        val spinnerAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            categories
+        )
+
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = spinnerAdapter
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedCategory = categories[position]
+                filterByCategory(selectedCategory)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+    }
+
+    private fun filterByCategory(category: String) {
+        val filteredList = if (category == "All") {
+            productArray
+        } else {
+            productArray.filter { it.Category == category }
+        }
+
+        adapter.clear()
+        adapter.addAll(filteredList)
+        adapter.notifyDataSetChanged()
     }
 }

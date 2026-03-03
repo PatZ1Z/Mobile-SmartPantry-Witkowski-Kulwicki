@@ -24,60 +24,35 @@
 
         />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/product_saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:text="Zapisz zmiany"
+        android:backgroundTint="#590606"
         android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wybierz kategorię:"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textColor="#590606"
+        />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#590606"
-            android:text="Add a product:"/>
 
-        <EditText
-            android:id="@+id/product_name"
-            android:textColor="#590606"
+        <Spinner
+            android:id="@+id/category_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"/>
-
-        <EditText
-            android:id="@+id/product_quantity"
-            android:textColor="#590606"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quantity"/>
-
-        <EditText
-            android:id="@+id/product_category"
-            android:textColor="#590606"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Category"/>
-
-        <EditText
-            android:id="@+id/product_imageref"
-            android:textColor="#590606"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ImageRef"/>
-
-        <Button
-            android:id="@+id/product_addBtn"
-            android:backgroundTint="#590606"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"/>
-
-        <Button
-            android:id="@+id/product_saveBtn"
-            android:backgroundTint="#590606"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"/>
+            android:layout_margin="10dp"/>
 
     </LinearLayout>
 
