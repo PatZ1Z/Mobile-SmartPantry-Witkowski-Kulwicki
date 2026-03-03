@@ -2,6 +2,8 @@
 
 **Project**: *Red Planet Pantry (Mars Colony)*
 
+**Załoga**: *Patryk Witkowski, Julian Kulwicki*
+
 **Status projektu**: PRE-LAUNCH Klient: Alan Musk (CEO of Space-X) 
 
 **Cel**: Przetrwanie pierwszych kolonistów na Marsie.
