@@ -1,6 +1,7 @@
 package com.example.mobile_smart_pantry_project_iv
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,10 +31,13 @@ class ProductAdapter(
         quantityText.text = "Quantity: ${product.Quantity}"
 
         val resId = context.resources.getIdentifier(
-            product.ImageRef.replace(".png", ""),
+            product.ImageRef,
             "drawable",
             context.packageName
         )
+
+
+        Log.d("IMG_DEBUG", "Szukam: ${product.ImageRef}, resId=$resId")
 
         if (resId != 0) {
             imageView.setImageResource(resId)

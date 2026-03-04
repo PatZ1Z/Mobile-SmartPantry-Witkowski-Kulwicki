@@ -4,69 +4,69 @@
     "Name": "2% Milk",
     "Quantity": 20,
     "Category": "Dairy",
-    "ImageRef": "res/drawable/milk.jpg"
+    "ImageRef": "milk"
   },
   {
     "UUID": "1a2b3c4d-0002",
     "Name": "Wheat Bread",
     "Quantity": 50,
     "Category": "Baked Goods",
-    "ImageRef": "res/drawable/bread.jpg"
+    "ImageRef": "bread"
   },
   {
     "UUID": "1a2b3c4d-0003",
     "Name": "Large Eggs",
     "Quantity": 30,
     "Category": "Dairy",
-    "ImageRef": "res/drawable/eggs.jpg"
+    "ImageRef": "eggs"
   },
   {
     "UUID": "1a2b3c4d-0004",
     "Name": "Butter",
     "Quantity": 15,
     "Category": "Dairy",
-    "ImageRef": "res/drawable/butter.jpg"
+    "ImageRef": "butter"
   },
   {
     "UUID": "1a2b3c4d-0005",
     "Name": "Oranges",
     "Quantity": 40,
     "Category": "Fruits",
-    "ImageRef": "res/drawable/oranges.jpg"
+    "ImageRef": "oranges"
   },
   {
     "UUID": "1a2b3c4d-0006",
     "Name": "Carrots",
     "Quantity": 35,
     "Category": "Vegetables",
-    "ImageRef": "res/drawable/carrots.jpg"
+    "ImageRef": "carrots"
   },
   {
     "UUID": "1a2b3c4d-0007",
     "Name": "Spaghetti",
     "Quantity": 25,
     "Category": "Dry Goods",
-    "ImageRef": "res/drawable/spaghetti.jpg"
+    "ImageRef": "spaghetti"
   },
   {
     "UUID": "1a2b3c4d-0008",
     "Name": "White Rice",
     "Quantity": 60,
     "Category": "Dry Goods",
-    "ImageRef": "res/drawable/rice.jpg"
+    "ImageRef": "rice"
   },
   {
     "UUID": "1a2b3c4d-0009",
     "Name": "Apple Juice",
     "Quantity": 30,
     "Category": "Drinks",
-    "ImageRef": "res/drawable/apple_juice.jpg"
+    "ImageRef": "apple_juice"
   },
   {
     "UUID": "1a2b3c4d-0010",
     "Name": "Yellow Cheese",
     "Quantity": 20,
     "Category": "Dairy",
-    "ImageRef": "res/drawable/yellow_cheese.jpg"
+    "ImageRef": "yellow_cheese"
   }
 ]
