@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
-
     private val productArray = mutableListOf<Product>()
 
     private var selectedPosition: Int = -1
@@ -46,46 +45,46 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val listView = findViewById<ListView>(R.id.ListOfProducts)
+
         adapter = ProductAdapter(this, productArray)
-        listView.adapter = adapter
+        binding.ListOfProducts.adapter = adapter
 
         loadMoviesFromJsonFile()
 
 
 
 
-        listView.setOnItemClickListener { _, _, position, _ ->
+        binding.ListOfProducts.setOnItemClickListener { _, _, position, _ ->
             selectedPosition = position
             adapter.setSelectedPosition(position)
         }
 
-        val searchInput = findViewById<EditText>(R.id.product_search)
-        searchInput.addTextChangedListener {
+
+        binding.productSearch.addTextChangedListener {
             adapter.filter.filter(it.toString())
         }
 
 
 
-        listView.setOnItemClickListener { _, _, position, _ ->
+        binding.ListOfProducts.setOnItemClickListener { _, _, position, _ ->
             selectedPosition = position
 
             adapter.setSelectedPosition(position)
         }
 
 
-        val increaseButton = findViewById<Button>(R.id.product_increaseQuantity)
 
-        increaseButton.setOnClickListener {
+
+        binding.productIncreaseQuantity.setOnClickListener {
             if (selectedPosition != -1) {
                 productArray[selectedPosition].Quantity++
                 adapter.notifyDataSetChanged()
             }
         }
 
-        val decreaseButton = findViewById<Button>(R.id.product_decreaseQuantity)
 
-        decreaseButton.setOnClickListener {
+
+        binding.productDecreaseQuantity.setOnClickListener {
             if (selectedPosition != -1) {
                 if (productArray[selectedPosition].Quantity > 0) {
                     productArray[selectedPosition].Quantity--
@@ -94,9 +93,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val saveBtn = findViewById<Button>(R.id.product_saveBtn)
 
-        saveBtn.setOnClickListener {
+
+        binding.productSaveBtn.setOnClickListener {
             saveProductsToJsonFile()
         }
 
@@ -175,7 +174,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupCategorySpinner() {
-        val spinner = findViewById<Spinner>(R.id.category_spinner)
+
 
         // Pobieramy unikalne kategorie z produktów
         val categories = productArray
@@ -193,9 +192,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = spinnerAdapter
+        binding.categorySpinner.adapter = spinnerAdapter
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        binding.categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedCategory = categories[position]
                 filterByCategory(selectedCategory)

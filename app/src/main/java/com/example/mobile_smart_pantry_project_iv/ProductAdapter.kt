@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Filter
+import com.example.mobile_smart_pantry_project_iv.databinding.ListItemProductBinding
 
 class ProductAdapter(
     private val context: Context,
@@ -18,17 +19,25 @@ class ProductAdapter(
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val view = convertView ?: LayoutInflater.from(context)
-            .inflate(R.layout.list_item_product, parent, false)
+        val binding: ListItemProductBinding
 
+        if (convertView == null) {
+            binding = ListItemProductBinding.inflate(
+                LayoutInflater.from(context),
+                parent,
+                false
+            )
+            binding.root.tag = binding
+        } else {
+            binding = convertView.tag as ListItemProductBinding
+        }
         val product = getItem(position)!!
 
-        val imageView = view.findViewById<ImageView>(R.id.productImage)
-        val nameText = view.findViewById<TextView>(R.id.productName)
-        val quantityText = view.findViewById<TextView>(R.id.productQuantity)
 
-        nameText.text = product.Name
-        quantityText.text = "Quantity: ${product.Quantity}"
+
+
+        binding.productName.text = product.Name
+        binding.productQuantity.text = "Quantity: ${product.Quantity}"
 
         val resId = context.resources.getIdentifier(
             product.ImageRef,
@@ -40,19 +49,19 @@ class ProductAdapter(
         Log.d("IMG_DEBUG", "Szukam: ${product.ImageRef}, resId=$resId")
 
         if (resId != 0) {
-            imageView.setImageResource(resId)
+            binding.productImage .setImageResource(resId)
         }
 
         // kolorowanie
         if (position == selectedPosition) {
-            view.setBackgroundColor(context.getColor(android.R.color.background_light))
+            binding.root.setBackgroundColor(context.getColor(android.R.color.background_light))
         } else if (product.Quantity < 6) {
-            view.setBackgroundColor(context.getColor(android.R.color.holo_red_light))
+            binding.root.setBackgroundColor(context.getColor(android.R.color.holo_red_light))
         } else {
-            view.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+            binding.root.setBackgroundColor(android.graphics.Color.TRANSPARENT)
         }
 
-        return view
+        return binding.root
     }
 
     fun setSelectedPosition(position: Int) {
